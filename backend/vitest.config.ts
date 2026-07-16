@@ -27,5 +27,11 @@ export default defineConfig({
       tsconfig: "./tsconfig.json",
     },
     testTimeout: 10_000,
+    // Set dummy Supabase env vars for tests (routes that don't hit the DB will work)
+    env: {
+      SUPABASE_URL: "https://test-project.supabase.co",
+      SUPABASE_ANON_KEY: "test-anon-key",
+      SUPABASE_SERVICE_ROLE_KEY: "test-service-role-key",
+    },
   },
 });
